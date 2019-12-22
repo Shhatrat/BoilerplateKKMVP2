@@ -1,0 +1,32 @@
+package com.shhatrat.boilerplatekkmvp.ui.joke
+
+import com.shhatrat.boilerplatekkmvp.R
+import com.shhatrat.boilerplatekkmvp.base.android.BaseActivity
+import com.shhatrat.boilerplatekkmvp.util.injectWithType
+import kotlinx.android.synthetic.main.activity_joke.*
+
+class JokeActivity : BaseActivity<IJokeContract.P, IJokeContract.V>(),
+    IJokeContract.V {
+
+    override val presenter: IJokeContract.P = injectWithType()
+
+    override fun getIView(): IJokeContract.V = this
+
+    override fun getLayout(): Int = R.layout.activity_joke
+
+    override fun showJokeText(joke: String) {
+        jokeTV.text = joke
+    }
+
+    override fun onSaveJokeClicked(action: () -> Unit) {
+        saveJokeBtn.setOnClickListener { action.invoke() }
+    }
+
+    override fun onShowNewJoke(action: () -> Unit) {
+        getNewJokeBtn.setOnClickListener { action.invoke() }
+    }
+
+    override fun onShowSavedJoke(action: () -> Unit) {
+        getSavedJokeBtn.setOnClickListener { action.invoke() }
+    }
+}
