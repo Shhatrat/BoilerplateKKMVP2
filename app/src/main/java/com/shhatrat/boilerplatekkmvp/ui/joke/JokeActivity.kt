@@ -2,13 +2,14 @@ package com.shhatrat.boilerplatekkmvp.ui.joke
 
 import com.shhatrat.boilerplatekkmvp.R
 import com.shhatrat.boilerplatekkmvp.base.android.BaseActivity
-import com.shhatrat.boilerplatekkmvp.util.injectWithType
 import kotlinx.android.synthetic.main.activity_joke.*
+import org.koin.android.ext.android.inject
 
 class JokeActivity : BaseActivity<IJokeContract.P, IJokeContract.V>(),
     IJokeContract.V {
 
-    override val presenter: IJokeContract.P = injectWithType()
+//    override val presenter: IJokeContract.P = injectWithType()
+    override val presenter: IJokeContract.P by inject()
 
     override fun getIView(): IJokeContract.V = this
 

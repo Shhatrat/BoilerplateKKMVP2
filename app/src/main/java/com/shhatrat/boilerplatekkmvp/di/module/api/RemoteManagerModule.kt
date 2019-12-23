@@ -1,4 +1,4 @@
-package com.shhatrat.boilerplatekkmvp.di.module
+package com.shhatrat.boilerplatekkmvp.di.module.api
 
 import com.shhatrat.boilerplatekkmvp.data.manager.remote.RemoteManagerImpl
 import okhttp3.OkHttpClient
@@ -12,7 +12,12 @@ import java.util.concurrent.TimeUnit
 fun getRemoteManagerModule() = module{
     single { createOkHttpClient() }
     single { RemoteManagerImpl.Service }
-    single { createWebService<RemoteManagerImpl.Service>(get(), RemoteManagerImpl.Service.URL) }
+    single {
+        createWebService<RemoteManagerImpl.Service>(
+            get(),
+            RemoteManagerImpl.Service.URL
+        )
+    }
 }
 
 fun createOkHttpClient(): OkHttpClient {
