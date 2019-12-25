@@ -6,7 +6,6 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.shhatrat.boilerplatekkmvp.data.db.model.JokeTable
 import io.reactivex.Completable
-import io.reactivex.Flowable
 import io.reactivex.Observable
 
 @Dao

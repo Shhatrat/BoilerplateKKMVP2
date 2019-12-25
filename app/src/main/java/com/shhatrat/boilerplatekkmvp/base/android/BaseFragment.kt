@@ -10,7 +10,7 @@ import com.shhatrat.boilerplatekkmvp.base.BasePresenter.Companion.DATA_KEY
 import com.shhatrat.boilerplatekkmvp.base.IPresenter
 import com.shhatrat.boilerplatekkmvp.base.IView
 
-abstract class BaseFragment<PresenterType : IPresenter<ViewType>, ViewType: IView>
+abstract class BaseFragment<PresenterType : IPresenter<ViewType>, ViewType : IView>
     : Fragment(),
     BaseInjectionView<PresenterType, ViewType> {
 

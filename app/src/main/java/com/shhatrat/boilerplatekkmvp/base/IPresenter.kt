@@ -1,6 +1,6 @@
 package com.shhatrat.boilerplatekkmvp.base
 
-interface IPresenter<ViewType: IView>{
+interface IPresenter<ViewType : IView> {
 
     fun attachView(view: ViewType, data: String?)
 
@@ -10,9 +10,9 @@ interface IPresenter<ViewType: IView>{
 
     fun viewPrepared()
 
-    fun onResume(){}
+    fun onResume() {}
 
-    fun onPause(){}
+    fun onPause() {}
 
     fun getDataToSend(): String?
 

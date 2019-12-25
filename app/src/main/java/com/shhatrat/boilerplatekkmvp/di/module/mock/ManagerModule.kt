@@ -8,8 +8,8 @@ import com.shhatrat.boilerplatekkmvp.data.manager.remote.IRemoteManager
 import com.shhatrat.boilerplatekkmvp.data.manager.remote.MockRemoteManager
 import org.koin.dsl.module
 
-fun getManagerModule() = module{
+fun getManagerModule() = module {
     single<IRemoteManager> { MockRemoteManager() }
     single<IDatabaseManager> { MockDatabaseImpl() }
-    single<IJokeManager> { JokeManagerImpl(get(),get()) }
+    single<IJokeManager> { JokeManagerImpl(get(), get()) }
 }

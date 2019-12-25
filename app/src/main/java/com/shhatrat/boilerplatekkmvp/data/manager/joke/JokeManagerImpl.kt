@@ -7,9 +7,10 @@ import io.reactivex.Completable
 import io.reactivex.Single
 
 class JokeManagerImpl
-    constructor(private val remoteManager: IRemoteManager,
-                private val databaseManager: IDatabaseManager
-    ): IJokeManager{
+constructor(
+    private val remoteManager: IRemoteManager,
+    private val databaseManager: IDatabaseManager
+) : IJokeManager {
 
     override fun getJokeFromDb(): Single<Joke> {
         return databaseManager.getJokes().firstOrError()

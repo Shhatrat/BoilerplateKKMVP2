@@ -5,7 +5,7 @@ import com.shhatrat.boilerplatekkmvp.util.MockUtil
 import io.reactivex.Completable
 import io.reactivex.Observable
 
-class MockDatabaseImpl: IDatabaseManager{
+class MockDatabaseImpl : IDatabaseManager {
 
     override fun addJoke(joke: Joke): Completable {
         return Completable.complete()

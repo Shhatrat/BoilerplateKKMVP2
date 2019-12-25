@@ -2,7 +2,7 @@ package com.shhatrat.boilerplatekkmvp.base
 
 import androidx.annotation.LayoutRes
 
-interface BaseInjectionView<PresenterType: IPresenter<ViewType>, ViewType: IView>{
+interface BaseInjectionView<PresenterType : IPresenter<ViewType>, ViewType : IView> {
 
 
     val presenter: PresenterType
@@ -16,5 +16,7 @@ interface BaseInjectionView<PresenterType: IPresenter<ViewType>, ViewType: IView
     @LayoutRes
     fun getLayout(): Int
 
-    fun prepareView(){ presenter.viewPrepared() }
+    fun prepareView() {
+        presenter.viewPrepared()
+    }
 }

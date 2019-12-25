@@ -8,7 +8,6 @@ import org.koin.android.ext.android.inject
 class JokeActivity : BaseActivity<IJokeContract.P, IJokeContract.V>(),
     IJokeContract.V {
 
-//    override val presenter: IJokeContract.P = injectWithType()
     override val presenter: IJokeContract.P by inject()
 
     override fun getIView(): IJokeContract.V = this

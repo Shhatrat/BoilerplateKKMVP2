@@ -9,7 +9,7 @@ import com.shhatrat.boilerplatekkmvp.base.IPresenter
 import com.shhatrat.boilerplatekkmvp.base.IView
 import org.jetbrains.anko.internals.AnkoInternals
 
-abstract class BaseActivity<PresenterType : IPresenter<ViewType>, ViewType: IView>
+abstract class BaseActivity<PresenterType : IPresenter<ViewType>, ViewType : IView>
     : AppCompatActivity(),
     BaseInjectionView<PresenterType, ViewType> {
 
@@ -35,7 +35,7 @@ abstract class BaseActivity<PresenterType : IPresenter<ViewType>, ViewType: IVie
         detach()
     }
 
-    inline fun <reified T : Activity>moveToActivity(){
+    inline fun <reified T : Activity> moveToActivity() {
         val param = arrayOf(Pair(DATA_KEY, presenter.getDataToSend()))
         AnkoInternals.internalStartActivity(this, T::class.java, param)
     }

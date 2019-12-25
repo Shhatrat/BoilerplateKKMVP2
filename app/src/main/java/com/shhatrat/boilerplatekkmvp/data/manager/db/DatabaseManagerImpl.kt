@@ -7,13 +7,14 @@ import io.reactivex.Completable
 import io.reactivex.Observable
 
 class DatabaseManagerImpl
-    constructor(private val jokeDb: JokeDb): IDatabaseManager{
+constructor(private val jokeDb: JokeDb) : IDatabaseManager {
 
     override fun addJoke(joke: Joke): Completable {
         return jokeDb.jokeDao().insert(JokeTable(joke.id, joke.joke))
     }
 
     override fun getJokes(): Observable<Joke> {
-        return jokeDb.jokeDao().getJoke().flatMapIterable { list -> list }.map { it -> Joke(it.id, it.joke) }
+        return jokeDb.jokeDao().getJoke().flatMapIterable { list -> list }
+            .map { it -> Joke(it.id, it.joke) }
     }
 }

@@ -5,7 +5,7 @@ import com.shhatrat.boilerplatekkmvp.util.MockUtil
 import io.reactivex.Completable
 import io.reactivex.Single
 
-class MockJokeManagerImpl: IJokeManager{
+class MockJokeManagerImpl : IJokeManager {
 
     override fun getJokeFromWeb(): Single<Joke> {
         return Single.just(MockUtil.getWrappedJoke().value)

@@ -4,7 +4,7 @@ import com.shhatrat.boilerplatekkmvp.data.model.Joke
 import io.reactivex.Completable
 import io.reactivex.Single
 
-interface IJokeManager{
+interface IJokeManager {
 
     fun getJokeFromDb(): Single<Joke>
     fun getJokeFromWeb(): Single<Joke>
