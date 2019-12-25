@@ -21,7 +21,7 @@ class JokeActivityTest {
     val activityRule = ActivityTestRule(JokeActivity::class.java)
 
     @Test
-    fun listGoesOverTheFold() {
+    fun startText() {
         onView(withText("mock joke"))
             .check(matches(isDisplayed()))
     }
@@ -30,6 +30,8 @@ class JokeActivityTest {
     fun onDbClick(){
         onView(withId(R.id.getSavedJokeBtn))
             .perform(click())
-            .check(matches(withText("mock db joke")))
+
+        onView(withText("mock db joke"))
+            .check(matches(isDisplayed()))
     }
 }
