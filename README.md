@@ -25,6 +25,7 @@ interface IJokeContract{
     interface V: IView{
         fun showJokeText(joke: String)
         ...
+        fun onShowNewJoke(action: () -> Unit)
     }
     interface P: IPresenter<V>
 }
@@ -38,6 +39,12 @@ Every `P's` interface should be bind to implmentation by factory in `PresenterMo
 ...
     factory<IJokeContract.P> { JokePresenterImpl(get(), get()) }
 ...
+```
+You you shouldn't add any code to `*Contract.P` file. View class shouldn't know anything about Presenter. Better way is setting listeners like this: 
+```
+    override fun onShowNewJoke(action: () -> Unit) {
+        getNewJokeBtn.setOnClickListener { action.invoke() }
+    }
 ```
 
 See `com.shhatrat.boilerplate_kkmvp.ui.joke` for more details and example.
