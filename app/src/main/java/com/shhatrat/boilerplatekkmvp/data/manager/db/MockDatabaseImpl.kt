@@ -12,6 +12,6 @@ class MockDatabaseImpl: IDatabaseManager{
     }
 
     override fun getJokes(): Observable<Joke> {
-        return Observable.just(MockUtil.getWrappedJoke().value)
+        return Observable.just(MockUtil.getWrappedJokeFromDb().value)
     }
 }

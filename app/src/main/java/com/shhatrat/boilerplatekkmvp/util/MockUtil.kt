@@ -9,4 +9,8 @@ object MockUtil{
     fun getWrappedJoke(): ResponseWrapper<Joke>{
         return ResponseWrapper<Joke>("success", Joke(1, "mock joke"))
     }
+
+    fun getWrappedJokeFromDb(): ResponseWrapper<Joke>{
+        return ResponseWrapper<Joke>("success", Joke(1, "mock db joke"))
+    }
 }
